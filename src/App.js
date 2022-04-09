@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FormInput from "./components/Form-Input/FormInput";
+import Form from "./components/Form/Form";
 
 function App() {
+  const signUpInitialValues = {
+    name: "",
+    emailAddress: "",
+    password: "",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Form Component</h1>
+      <div className="form-container">
+        <button className="btn">Google Sign in</button>
+        <Form initialValues={signUpInitialValues} heading="Sign Up">
+          <FormInput label="Name" name="name" />
+          <FormInput label="Email" name="emailAddress" />
+          <FormInput label="Password" name="password" />
+        </Form>
+      </div>
     </div>
   );
 }
